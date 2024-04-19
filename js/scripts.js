@@ -1,7 +1,7 @@
 let intIndex = 0;
 
-function showImage(i) {
-    intIndex+=i;
+function showImage() {
+    intIndex++;
 
     let images = document.getElementsByClassName("image");
     let dots = document.getElementsByClassName("dot");
@@ -20,7 +20,9 @@ function showImage(i) {
     images[intIndex].style.display = "block";
     dots[intIndex].className+= " active";
 }
-
+setInterval(() => {
+    showImage();
+}, 5000);
 window.onload = function () {
     document.getElementById("copyright").innerHTML = new Date().getFullYear();
 }
